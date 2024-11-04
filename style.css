@@ -1,0 +1,164 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f7fa;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #0056b3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+  transition: background-color 0.3s, transform 0.2s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #003366;
+  border-radius: 4px;
+  transform: scale(1.05);
+}
+
+/* Sections */
+section {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  width: 80%;
+  max-width: 1200px; /* Added max width for larger screens */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #003366;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem; /* Increased font size for better readability */
+}
+
+/* Recharge Form */
+#recharge-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#recharge-form label {
+  margin: 0.5rem 0;
+}
+
+#recharge-form input,
+#recharge-form select {
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+#recharge-form input:focus,
+#recharge-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Placeholder Styles */
+#recharge-form input::placeholder,
+#recharge-form select::placeholder {
+  color: #aaa; /* Change color for better visibility */
+}
+
+/* Button Styles */
+#recharge-form button {
+  padding: 0.7rem 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#recharge-form button:hover {
+  transform: scale(1.05);
+  background-color: #0056b3;
+}
+
+#recharge-form button:focus {
+  outline: 2px solid #0056b3; /* Focus outline for accessibility */
+}
+
+/* Video Section */
+#video-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#video-section video {
+  max-width: 70%;
+  height: auto;
+}
+
+/* Contact Section */
+.contact-item {
+  margin-bottom: 1.5rem;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item h3 {
+  margin: 0;
+  color: #0056b3;
+}
+
+.contact-item button {
+  margin-top: 0.5rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  section {
+    width: 95%; /* Adjust section width for smaller screens */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack nav items vertically on smaller screens */
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  /* Additional styles for buttons on small screens */
+  #recharge-form button {
+    width: 100%; /* Make buttons full width on small screens */
+  }
+}

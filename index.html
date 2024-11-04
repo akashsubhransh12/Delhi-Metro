@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delhi Metro Navigation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#recharge">Recharge</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#help">Help</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <header>
+      <h1>Delhi Metro Navigation</h1>
+    </header>
+    <div id="video-section">
+      <h2>Explore the Delhi Metro</h2>
+      <video controls autoplay muted loop>
+        <source src="12523796_3840_2160_24fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>If the video doesn't load, please <a href="12523796_3840_2160_24fps.mp4" download>download it here</a>.</p>
+    </div>
+  </section>
+
+  <!-- Metro Map Image -->
+  <section id="map">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFNi6I4l4daeZkQ8aZdsRpFJqB3cgnO4Tfhg&s" alt="Delhi Metro Map" />
+  </section>
+
+  <!-- Route Calculation Section -->
+  <section id="route-calculation">
+    <h2>Route Calculation</h2>
+    <label for="start-station">Start Station:</label>
+    <select id="start-station">
+      <option value="">Select Station</option>
+      <option value="Station A">Station A</option>
+            <option value="Station B">Station B</option>
+            <option value="Station C">Station C</option>
+      
+    </select>
+  
+    <label for="end-station">End Station:</label>
+    <select id="end-station">
+      <option value="">Select End Station</option>
+      <option value="Station A">Station A</option>
+      <option value="Station B">Station B</option>
+      <option value="Station C">Station C</option>
+      
+    </select>
+  
+    <button id="calculate-route">Calculate Route</button>
+  
+    <!-- New Section for displaying results -->
+    <div id="result-section" style="margin-top: 1rem; background-color: #e7f3fe; padding: 1rem; border-radius: 4px;">
+      <!-- Results will be displayed here -->
+    </div>
+  </section>
+
+  <!-- Travel History Section -->
+  <section id="history">
+    <h2>Travel History</h2>
+    <table id="history-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Start Station</th>
+          <th>End Station</th>
+          <th>Distance</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Travel history entries will be inserted here -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Recharge Section -->
+  <section id="recharge">
+    <h2>Buy Ticket Online</h2>
+    <form id="recharge-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required placeholder="Enter your name">
+
+      <label for="mobile">Mobile No:</label>
+      <input type="tel" id="mobile" required placeholder="Enter mobile number">
+
+      <label for="ticket-type">Ticket Type:</label>
+      <select id="ticket-type" required>
+        <option value="single">Single</option>
+        <option value="return">Return</option>
+        <option value="day-pass">Day Pass</option>
+      </select>
+
+      <button type="button" id="pay-button">Make Payment</button>
+      <button type="button" id="print-ticket">Print Ticket</button>
+      <button type="button" id="save-ticket">Save Ticket</button>
+    </form>
+  </section>
+
+  <!-- Facilities Section -->
+  <section id="facilities">
+    <h2>Facilities</h2>
+    <p>Information on Delhi Metro facilities...</p>
+  </section>
+
+  <!-- Security Section -->
+  <section id="security">
+    <h2>Security</h2>
+    <p>Information on Delhi Metro security measures...</p>
+  </section>
+
+  <!-- Help Section -->
+  <section id="help">
+    <h2>Help</h2>
+    <p>FAQs and assistance for travelers...</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-item">
+      <h3>DMRC 24x7 Helpline:</h3>
+      <p>Phone number: 155370 (chargeable)</p>
+      <p>Email: <a href="mailto:helpline@dmrc.org">helpline@dmrc.org</a></p>
+      <button onclick="callNumber('155370')">Call</button>
+    </div>
+    <div class="contact-item">
+      <h3>DMRC Missing, Separated, Women, Child and Specially Abled Commuters Helpline:</h3>
+      <p>Phone numbers: 181-22415480, 8800550490</p>
+      <p>Email: <a href="mailto:dmrc-delhi@cist.gov.in">dmrc-delhi@cist.gov.in</a></p>
+      <button onclick="callNumber('18122415480')">Call 181</button>
+      <button onclick="callNumber('8800550490')">Call 8800</button>
+    </div>
+    <div class="contact-item">
+      <h3>CISF unit DMRC 24x7 Helpline:</h3>
+      <p>Phone number: 155655</p>
+      <p>Email: <a href="mailto:dmrc-delhi@cist.gov.in">dmrc-delhi@cist.gov.in</a></p>
+      <button onclick="callNumber('155655')">Call</button>
+    </div>
+    <div class="contact-item">
+      <h3>Delhi Police Control Room:</h3>
+      <p>Phone number: 112</p>
+      <p>Email: <a href="mailto:delpol.service@delhipolice.gov.in">delpol.service@delhipolice.gov.in</a></p>
+      <button onclick="callNumber('112')">Call</button>
+    </div>
+    <div class="contact-item">
+      <h3>Delhi Police Tourist Helpline:</h3>
+      <p>Phone number: 15611</p>
+      <p>Email: <a href="mailto:delpol.service@delhipolice.gov.in">delpol.service@delhipolice.gov.in</a></p>
+      <button onclick="callNumber('15611')">Call</button>
+    </div>
+    <div class="contact-item">
+      <h3>Delhi Police unit Delhi Metro:</h3>
+      <p>Phone number: 1511</p>
+      <p>Email: <a href="mailto:metrocontrolroom2020@gmail.com">metrocontrolroom2020@gmail.com</a></p>
+      <button onclick="callNumber('1511')">Call</button>
+    </div>
+    <div class="contact-item">
+      <h3>Women Helpline:</h3>
+      <p>Phone number: 1091</p>
+      <p>Email: <a href="mailto:complaintcell-ncw@nic.in">complaintcell-ncw@nic.in</a></p>
+      <button onclick="callNumber('1091')">Call</button>
+    </div>
+    <div class="contact-item">
+      <h3>Senior Citizen Helpline:</h3>
+      <p>Phone numbers: 1091, 1291</p>
+      <p>Email: <a href="mailto:delpol.service@delhipolice.gov.in">delpol.service@delhipolice.gov.in</a></p>
+      <button onclick="callNumber('1091')">Call 1091</button>
+      <button onclick="callNumber('1291')">Call 1291</button>
+    </div>
+    <div class="contact-item">
+      <h3>National Cyber Crime Reporting Portal:</h3>
+      <p>Phone number: 1930</p>
+      <p>Website: <a href="http://www.cybercrime.gov.in" target="_blank">www.cybercrime.gov.in</a></p>
+      <button onclick="callNumber('1930')">Call</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
