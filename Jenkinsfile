@@ -33,11 +33,16 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                echo 'Deploying the application...'
-                // Example deployment command — adjust to your server setup
-                // sh 'scp -r ./build user@server:/var/www/html/'
-            }
+    steps {
+        echo 'Deploying website to IIS folder...'
+        bat '''
+        echo Copying files to IIS webroot...
+        xcopy /Y /E "%WORKSPACE%\\*" "C:\\inetpub\\wwwroot\\Delhi-Metro-main\\"
+        echo Deployment complete.
+        '''
+    }
+}
+
         }
     }
 
