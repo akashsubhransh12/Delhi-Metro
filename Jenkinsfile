@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        // You can set environment variables here if needed
         APP_NAME = "Delhi-Metro"
     }
 
@@ -17,8 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // Example: If your project uses Node.js, Maven, or Gradle — add relevant build commands
-                // For example, if it’s a Node.js app:
+                // Example build steps (uncomment if needed)
                 // sh 'npm install'
                 // sh 'npm run build'
             }
@@ -27,22 +25,20 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Add your test commands here
+                // Example test step
                 // sh 'npm test'
             }
         }
 
         stage('Deploy') {
-    steps {
-        echo 'Deploying website to IIS folder...'
-        bat '''
-        echo Copying files to IIS webroot...
-        xcopy /Y /E "%WORKSPACE%\\*" "C:\\inetpub\\wwwroot\\Delhi-Metro-main\\"
-        echo Deployment complete.
-        '''
-    }
-}
-
+            steps {
+                echo 'Deploying website to IIS folder...'
+                bat '''
+                echo Copying files to IIS webroot...
+                xcopy /Y /E "%WORKSPACE%\\*" "C:\\inetpub\\wwwroot\\Delhi-Metro-main\\"
+                echo Deployment complete.
+                '''
+            }
         }
     }
 
